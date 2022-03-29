@@ -1,0 +1,33 @@
+@baseUrl = http://localhost:3000
+@id = 1
+GET {{ baseUrl }}
+
+###
+GET {{ baseUrl }}/products
+
+###
+GET {{ baseUrl }}/products/{{ id }}
+
+###
+POST {{ baseUrl }}/products
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "price": 5000,
+    "stock": 10
+}
+
+###
+PUT {{ baseUrl }}/products/{{ id }}
+Content-Type: application/json
+
+{
+    "description": "Product 2"
+}
+
+###
+DELETE {{ baseUrl }}/products/{{ id }}
+
+
+
